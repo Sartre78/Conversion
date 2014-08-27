@@ -119,58 +119,130 @@ int temperature (void)
             // F -> C
             case 1: printf("\nPlease enter the temperature in degrees Fahrenheit:\n\n");
                     fahrenheit = GetFloat();
+                    // Absolute limit condition
+                    while (fahrenheit < -459.67) 
+                    {
+                        printf("\nThe lowest possible temperature is -459.67 degrees Fahrenheit.  Please retry:\n\n");
+                        fahrenheit = GetFloat();
+                    }
                     printf("\n%.2f Degrees Fahrenheit is %.2f Degrees Celcius.\n\n", fahrenheit, celcius(fahrenheit)); break;
                     
             // F -> R
             case 2: printf("\nPlease enter the temperature in degrees Fahrenheit:\n\n");
                     fahrenheit = GetFloat();
+                    // Absolute limit condition
+                    while (fahrenheit < -459.67) 
+                    {
+                        printf("\nThe lowest possible temperature is -459.67 degrees Fahrenheit.  Please retry:\n\n");
+                        fahrenheit = GetFloat();
+                    }
                     printf("\n%.2f Degrees Fahrenheit is %.2f Degrees Rankine.\n\n", fahrenheit, fahrenheit + 459.67); break;
                     
             // F -> K
             case 3: printf("\nPlease enter the temperature in degrees Fahrenheit:\n\n");
                     fahrenheit = GetFloat();
+                    // Absolute limit condition
+                    while (fahrenheit < -459.67) 
+                    {
+                        printf("\nThe lowest possible temperature is -459.67 degrees Fahrenheit.  Please retry:\n\n");
+                        fahrenheit = GetFloat();
+                    }
                     printf("\n%.2f Degrees Fahrenheit is %.2f Degrees Kelvin.\n\n", fahrenheit, celcius(fahrenheit) + 273.15); break;
                     
             // C -> F
             case 4: printf("\nPlease enter the temperature in degrees Celcius:\n\n");
                     cel = GetFloat();
+                    // Absolute limit condition
+                    while (cel < -273.15) 
+                    {
+                        printf("\nThe lowest possible temperature is -273.15 degrees Celcius.  Please retry:\n\n");
+                        cel = GetFloat();
+                    }
                     printf("\n%.2f Degrees Celcius is %.2f Degrees Fahrenheit.\n\n", cel, fahr(cel)); break;
                     
             // C -> K        
             case 5: printf("\nPlease enter the temperature in degrees Celcius:\n\n");
                     cel = GetFloat();
+                    // Absolute limit condition
+                    while (cel < -273.15) 
+                    {
+                        printf("\nThe lowest possible temperature is -273.15 degrees Celcius.  Please retry:\n\n");
+                        cel = GetFloat();
+                    }
                     printf("\n%.2f Degrees Celcius is %.2f Degrees Kelvin.\n\n", cel, cel + 273.15); break;
                     
             // C -> R
             case 6: printf("\nPlease enter the temperature in degrees Celcius:\n\n");
                     cel = GetFloat();
+                    // Absolute limit condition
+                    while (cel < -273.15) 
+                    {
+                        printf("\nThe lowest possible temperature is -273.15 degrees Celcius.  Please retry:\n\n");
+                        cel = GetFloat();
+                    }
                     printf("\n%.2f Degrees Celcius is %.2f Degrees Rankine.\n\n", cel, fahr(cel) + 459.67); break;
                     
             // K -> C
             case 7: printf("\nPlease enter the temperature in degrees Kelvin:\n\n");
                     kel = GetFloat();
+                    // Absolute limit condition
+                    while (kel < 0) 
+                    {
+                        printf("\nThe lowest possible temperature is 0 degrees Kelvin.  Please retry:\n\n");
+                        kel = GetFloat();
+                    }
                     printf("\n%.2f Degrees Kelvin is %.2f Degrees Celcius.\n\n", kel, kel - 273.15); break;
             // K -> F
             case 8: printf("\nPlease enter the temperature in degrees Kelvin:\n\n");
                     kel = GetFloat();
+                    // Absolute limit condition
+                    while (kel < 0) 
+                    {
+                        printf("\nThe lowest possible temperature is 0 degrees Kelvin.  Please retry:\n\n");
+                        kel = GetFloat();
+                    }
                     printf("\n%.2f Degrees Kelvin is %.2f Degrees Fahrenheit.\n\n", kel, fahr(kel - 273.15)); break;
                     
             // K -> R
             case 9: printf("\nPlease enter the temperature in degrees Kelvin:\n\n");
                     kel = GetFloat();
+                    // Absolute limit condition
+                    while (kel < 0) 
+                    {
+                        printf("\nThe lowest possible temperature is 0 degrees Kelvin.  Please retry:\n\n");
+                        kel = GetFloat();
+                    }
                     printf("\n%.2f Degrees Kelvin is %.2f Degrees Rankine.\n\n", kel, fahr(kel - 273.15) + 459.67); break;
                             
             // R -> F        
             case 10: printf("\nPlease enter the temperature in degrees Rankine:\n\n");
                     rank = GetFloat();
+                    // Absolute limit condition
+                    while (rank < 0) 
+                    {
+                        printf("\nThe lowest possible temperature is 0 degrees Rankine.  Please retry:\n\n");
+                        rank = GetFloat();
+                    }
                     printf("\n%.2f Degrees Rankine is %.2f Degrees Fahrenheit.\n\n", rank, rank - 459.67); break;
             // R -> C        
             case 11: printf("\nPlease enter the temperature in degrees Rankine:\n\n");
                     rank = GetFloat();
+                    // Absolute limit condition
+                    while (rank < 0) 
+                    {
+                        printf("\nThe lowest possible temperature is 0 degrees Rankine.  Please retry:\n\n");
+                        rank = GetFloat();
+                    }
                     printf("\n%.2f Degrees Rankine is %.2f Degrees Celcius.\n\n", rank, celcius(rank - 459.67)); break;
             // R -> K         
             case 12: printf("\nPlease enter the temperature in degrees Rankine:\n\n");
                     rank = GetFloat();
+                    // Absolute limit condition
+                    while (rank < 0) 
+                    {
+                        printf("\nThe lowest possible temperature is 0 degrees Rankine.  Please retry:\n\n");
+                        rank = GetFloat();
+                    }
                     printf("\n%.2f Degrees Rankine is %.2f Degrees Kelvin.\n\n", rank, celcius(rank - 459.67) + 273.15); break;
                     
             default: printf("\nNot a valid option.\n\n"); break;
