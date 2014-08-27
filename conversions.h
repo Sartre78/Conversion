@@ -18,11 +18,11 @@ float celcius (float x) {return (((x - 32) * 5.0) / 9.0);}
 // Celcius to Fahrenheit conversion
 float fahr (float x) {return (((x * 9.0) / 5.0) + 32);}
 
-// Pounds per square inch (psi) to mega-pascals
-float psi_to_mpa (float x) {return x * 0.00689475728;}
+// Pounds per square inch (psi) to pascals
+float psi_to_pas (float x) {return x * 6894.75728;}
 
-// mega-pascals to psi
-float mpa_to_psi (float x) {return x * 145.03773800;} 
+// Pascals to psi
+float pas_to_psi (float x) {return x * 0.000145037738;} 
 
 // psi to inches of water
 float psi_to_h2o (float x) {return x * 27.6799048425;}
