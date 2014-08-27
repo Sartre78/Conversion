@@ -359,21 +359,29 @@ int distance (void)
             // ft -> m
             case 1: printf("\nPlease enter the length in feet:\n\n");
                     ft = GetFloat();
+                    // Absolute limit condition
+                    while (ft < 0) {printf("\nPlease enter a value greater than zero:\n\n"); ft = GetFloat();}
                     printf("\n%.2f feet is %.2f meters.\n\n", ft, ft_to_m(ft)); break;
                     
             // m -> ft
             case 2: printf("\nPlease enter the length in meters:\n\n");
                     m = GetFloat();
+                    // Absolute limit condition
+                    while (m < 0) {printf("\nPlease enter a value greater than zero:\n\n"); m = GetFloat();}
                     printf("\n%.2f meters is %.2f feet.\n\n", m, m_to_ft(m)); break;
                     
             // mile -> kilo
             case 3: printf("\nPlease enter the length in miles:\n\n");
                     mile = GetFloat();
+                    // Absolute limit condition
+                    while (mile < 0) {printf("\nPlease enter a value greater than zero:\n\n"); mile = GetFloat();}
                     printf("\n%.2f miles is %.2f kilometers.\n\n", mile, mile_to_kilo(mile)); break;
                     
             // kilo -> mile
             case 4: printf("\nPlease enter the length in kilometers:\n\n");
                     kilo = GetFloat();
+                    // Absolute limit condition
+                    while (kilo < 0) {printf("\nPlease enter a value greater than zero:\n\n"); kilo = GetFloat();}
                     printf("\n%.2f kilometers is %.2f miles.\n\n", kilo, kilo_to_mile(kilo)); break;
                     
             default: printf("\nNot a valid option.\n\n"); break;   
@@ -400,11 +408,15 @@ int area (void)
             // sqft -> sqm
             case 1: printf("\nPlease enter the area in square feet:\n\n");
                     sqft = GetFloat();
+                    // Absolute limit condition
+                    while (sqft < 0) {printf("\nPlease enter a value greater than zero:\n\n"); sqft = GetFloat();}
                     printf("\n%.2f square feet is %.2f square meters.\n\n", sqft, sqft_to_sqm(sqft)); break;
                     
             // sqm -> sqft
             case 2: printf("\nPlease enter the area in square meters:\n\n");
                     sqm = GetFloat();
+                    // Absolute limit condition
+                    while (sqm < 0) {printf("\nPlease enter a value greater than zero:\n\n"); sqm = GetFloat();}
                     printf("\n%.2f square meters is %.2f square feet.\n\n", sqm, sqm_to_sqft(sqm)); break;
 
             default: printf("\nNot a valid option.\n\n"); break;   
@@ -431,11 +443,15 @@ int volume (void)
             // ft^3 -> m^3
             case 1: printf("\nPlease enter the volume in cubic feet:\n\n");
                     cubft = GetFloat();
+                    // Absolute limit condition
+                    while (cubft < 0) {printf("\nPlease enter a value greater than zero:\n\n"); cubft = GetFloat();}
                     printf("\n%.2f cubic feet is %.2f cubic meters.\n\n", cubft, cubft_to_cubm(cubft)); break;
                     
             // m^3 -> ft^3
             case 2: printf("\nPlease enter the volume in cubic meters:\n\n");
                     cubm = GetFloat();
+                    // Absolute limit condition
+                    while (cubm < 0) {printf("\nPlease enter a value greater than zero:\n\n"); cubm = GetFloat();}
                     printf("\n%.2f cubic meters is %.2f cubic feet.\n\n", cubm, cubm_to_cubft(cubm)); break;
 
             default: printf("\nNot a valid option.\n\n"); break;   
@@ -466,31 +482,43 @@ int velocity (void)
             // ft/s -> m/s
             case 1: printf("\nPlease enter the velocity in feet per second:\n\n");
                     fts = GetFloat();
+                    // Absolute limit condition
+                    while (fts < 0) {printf("\nPlease enter a value greater than zero:\n\n"); fts = GetFloat();}
                     printf("\n%.2f ft/s is %.2f m/s.\n\n", fts, ft_to_m(fts)); break;
                     
             // ft/s -> mph
             case 2: printf("\nPlease enter the velocity in feet per second:\n\n");
                     fts = GetFloat();
+                    // Absolute limit condition
+                    while (fts < 0) {printf("\nPlease enter a value greater than zero:\n\n"); fts = GetFloat();}
                     printf("\n%.2f ft/s is %.2f mph.\n\n", fts, fts_to_mph(fts)); break;
                     
             // m/s -> ft/s
             case 3: printf("\nPlease enter the velocity in meters per second:\n\n");
                     ms = GetFloat();
+                    // Absolute limit condition
+                    while (ms < 0) {printf("\nPlease enter a value greater than zero:\n\n"); ms = GetFloat();}
                     printf("\n%.2f m/s is %.2f f/s.\n\n", ms, m_to_ft(ms)); break;
                     
             // m/s -> mph
             case 4: printf("\nPlease enter the velocity in meters per second:\n\n");
                     ms = GetFloat();
+                    // Absolute limit condition
+                    while (ms < 0) {printf("\nPlease enter a value greater than zero:\n\n"); ms = GetFloat();}
                     printf("\n%.2f m/s is %.2f mph.\n\n", ms, fts_to_mph(m_to_ft(ms))); break;
                     
             // mph -> ft/s
             case 5: printf("\nPlease enter the velocity in miles per hour:\n\n");
                     mph = GetFloat();
+                    // Absolute limit condition
+                    while (mph < 0) {printf("\nPlease enter a value greater than zero:\n\n"); mph = GetFloat();}
                     printf("\n%.2f mph is %.2f ft/s.\n\n", mph, mph_to_fts(mph)); break;
                     
             // mph -> m/s
             case 6: printf("\nPlease enter the velocity in miles per hour:\n\n");
                     mph = GetFloat();
+                    // Absolute limit condition
+                    while (mph < 0) {printf("\nPlease enter a value greater than zero:\n\n"); mph = GetFloat();}
                     printf("\n%.2f mph is %.2f m/s.\n\n", mph, ft_to_m(mph_to_fts(mph))); break;
                     
             default: printf("\nNot a valid option.\n\n"); break;   
@@ -517,11 +545,15 @@ int acceleration (void)
             // ft/sec^2 -> m/s^2
             case 1: printf("\nPlease enter the acceleration in feet per second squared:\n\n");
                     fts2 = GetFloat();
+                    // Absolute limit condition
+                    while (fts2 < 0) {printf("\nPlease enter a value greater than zero:\n\n"); fts2 = GetFloat();}
                     printf("\n%.2f ft/sec^2 is %.2f m/s^2.\n\n", fts2, fts2_to_ms2(fts2)); break;
                     
             // m/s^2 -> ft/sec^2 
             case 2: printf("\nPlease enter the acceleration in meters per second squared:\n\n");
                     ms2 = GetFloat();
+                    // Absolute limit condition
+                    while (ms2 < 0) {printf("\nPlease enter a value greater than zero:\n\n"); ms2 = GetFloat();}
                     printf("\n%.2f m/s^2 is %.2f ft/sec^2.\n\n", ms2, ms2_to_fts2(ms2)); break;
 
             default: printf("\nNot a valid option.\n\n"); break;   
