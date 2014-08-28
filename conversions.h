@@ -42,11 +42,11 @@ float mmhg_to_mmh2o (float x) {return x * 13.595084;}
 // mm of water to mm of mercury
 float mmh2o_to_mmhg (float x) {return x * (1 / 13.595084);}
 
-// mm Hg to in Hg
-float mmhg_to_hg (float x) {return x * 0.03937023;}
+// millimeters to inches
+float mm_to_in (float x) {return x * 0.03937023;}
 
-// in Hg to mm Hg
-float hg_to_mmhg (float x) {return x * (1 / 0.03937023);}
+// inches to millimeters
+float in_to_mm (float x) {return x * (1 / 0.03937023);}
 
 // feet to meters
 float ft_to_m (float x) {return x * 0.3048;}
