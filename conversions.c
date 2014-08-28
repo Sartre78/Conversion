@@ -41,6 +41,8 @@ float psi; // pounds per square inch
 float pas; // pascals
 float h2o; // inches of water column
 float hg; // inches of mercury
+float mmh2o; // millimeters of water column
+float mmhg; // millimeters of mercury
 float ft; // feet
 float m; // meter
 float mile; // mile
@@ -116,6 +118,7 @@ int temperature (void)
         switch (temp)
         {
             case 0: return false;
+            
             // F -> C
             case 1: printf("\nPlease enter the temperature in degrees Fahrenheit:\n\n");
                     fahrenheit = GetFloat();
@@ -192,6 +195,7 @@ int temperature (void)
                         kel = GetFloat();
                     }
                     printf("\n%.2f Degrees Kelvin is %.2f Degrees Celcius.\n\n", kel, kel - 273.15); break;
+                    
             // K -> F
             case 8: printf("\nPlease enter the temperature in degrees Kelvin:\n\n");
                     kel = GetFloat();
@@ -216,34 +220,36 @@ int temperature (void)
                             
             // R -> F        
             case 10: printf("\nPlease enter the temperature in degrees Rankine:\n\n");
-                    rank = GetFloat();
-                    // Absolute limit condition
-                    while (rank < 0) 
-                    {
+                     rank = GetFloat();
+                     // Absolute limit condition
+                     while (rank < 0) 
+                     {
                         printf("\nThe lowest possible temperature is 0 degrees Rankine.  Please retry:\n\n");
                         rank = GetFloat();
-                    }
-                    printf("\n%.2f Degrees Rankine is %.2f Degrees Fahrenheit.\n\n", rank, rank - 459.67); break;
+                     }
+                     printf("\n%.2f Degrees Rankine is %.2f Degrees Fahrenheit.\n\n", rank, rank - 459.67); break;
+                     
             // R -> C        
             case 11: printf("\nPlease enter the temperature in degrees Rankine:\n\n");
-                    rank = GetFloat();
-                    // Absolute limit condition
-                    while (rank < 0) 
-                    {
+                     rank = GetFloat();
+                     // Absolute limit condition
+                     while (rank < 0) 
+                     {
                         printf("\nThe lowest possible temperature is 0 degrees Rankine.  Please retry:\n\n");
                         rank = GetFloat();
-                    }
-                    printf("\n%.2f Degrees Rankine is %.2f Degrees Celcius.\n\n", rank, celcius(rank - 459.67)); break;
+                     }
+                     printf("\n%.2f Degrees Rankine is %.2f Degrees Celcius.\n\n", rank, celcius(rank - 459.67)); break;
+                     
             // R -> K         
             case 12: printf("\nPlease enter the temperature in degrees Rankine:\n\n");
-                    rank = GetFloat();
-                    // Absolute limit condition
-                    while (rank < 0) 
-                    {
+                     rank = GetFloat();
+                     // Absolute limit condition
+                     while (rank < 0) 
+                     {
                         printf("\nThe lowest possible temperature is 0 degrees Rankine.  Please retry:\n\n");
                         rank = GetFloat();
-                    }
-                    printf("\n%.2f Degrees Rankine is %.2f Degrees Kelvin.\n\n", rank, celcius(rank - 459.67) + 273.15); break;
+                     }
+                     printf("\n%.2f Degrees Rankine is %.2f Degrees Kelvin.\n\n", rank, celcius(rank - 459.67) + 273.15); break;
                     
             default: printf("\nNot a valid option.\n\n"); break;
         }
@@ -261,78 +267,190 @@ int pressure (void)
         printf("1 - PSI to Pascals\n");
         printf("2 - PSI to Inches H2O\n");
         printf("3 - PSI to Inches Hg\n");
-        printf("4 - Pascals to PSI\n");
-        printf("5 - Pascals to Inches H2O\n");
-        printf("6 - Pascals to Inches Hg\n");
-        printf("7 - Inches H2O to Inches Hg\n");
-        printf("8 - Inches H20 to PSI\n");
-        printf("9 - Inches H20 to Pascals\n");
-        printf("10 - Inches Hg to Inches H20\n");
-        printf("11 - Inches Hg to PSI\n");
-        printf("12 - Inches Hg to Pascals\n");        
+        printf("4 - PSI to mmH2O\n");
+        printf("5 - PSI to mmHg\n");
+        printf("6 - Pascals to PSI\n");
+        printf("7 - Pascals to Inches H2O\n");
+        printf("8 - Pascals to Inches Hg\n");
+        printf("9 - Pascals to mmH2O\n");
+        printf("10 - Pascals to mmHg\n");
+        printf("11 - Inches H2O to Inches Hg\n");
+        printf("12 - Inches H2O to PSI\n");
+        printf("13 - Inches H2O to Pascals\n");
+        printf("14 - Inches H2O to mmH2O\n");
+        printf("15 - Inches H2O to mmHg\n");
+        printf("16 - Inches Hg to Inches H2O\n");
+        printf("17 - Inches Hg to PSI\n");
+        printf("18 - Inches Hg to Pascals\n"); 
+        printf("19 - Inches Hg to mmH2O\n");
+        printf("20 - Inches Hg to mmHg\n");
+        printf("21 - mmH2O to mmHg\n");
+        printf("22 - mmH2O to Inches H2O\n");
+        printf("23 - mmH2O to Inches Hg\n");
+        printf("24 - mmH2O to PSI\n");
+        printf("25 - mmH2O to Pascals\n");
+        printf("26 - mmHg to mmH2O\n");
+        printf("27 - mmHg to Inches Hg\n");
+        printf("28 - mmHg to Inches H2O\n");
+        printf("29 - mmHg to PSI\n");
+        printf("30 - mmHg to Pascals\n");       
         printf("\n");
         int pres = GetInt();
         
         switch (pres)
         {
             case 0: return false;
+            
             // PSI -> pascals
             case 1: printf("\nPlease enter the pressure in psi:\n\n");
                     psi = GetFloat();
                     printf("\n%.3f psi is %.3f pascals.\n\n", psi, psi_to_pas(psi)); break;
                     
-            // PSI -> H2O
+            // PSI -> in H2O
             case 2: printf("\nPlease enter the pressure in psi:\n\n");
                     psi = GetFloat();
                     printf("\n%.3f psi is %.3f inches of water.\n\n", psi, psi_to_h2o(psi)); break;
                     
-            // PSI -> Hg
+            // PSI -> in Hg
             case 3: printf("\nPlease enter the pressure in psi:\n\n");
                     psi = GetFloat();
                     printf("\n%.3f psi is %.3f inches of Hg.\n\n", psi, h2o_to_hg(psi_to_h2o(psi))); break;
                     
+            // PSI -> mm H2O
+            case 4: printf("\nPlease enter the pressure in psi:\n\n");
+                    psi = GetFloat();
+                    printf("\n%.3f psi is %.3f millimeters of water.\n\n", psi, mmhg_to_mmh2o(hg_to_mmhg(h2o_to_hg(psi_to_h2o(psi))))); break;
+            
+            // PSI -> mm Hg
+            case 5: printf("\nPlease enter the pressure in psi:\n\n");
+                    psi = GetFloat();
+                    printf("\n%.3f psi is %.3f millimeters of Hg.\n\n", psi, hg_to_mmhg(h2o_to_hg(psi_to_h2o(psi)))); break;
+                    
             // Pascals -> PSI
-            case 4: printf("\nPlease enter the pressure in pascals:\n\n");
+            case 6: printf("\nPlease enter the pressure in pascals:\n\n");
                     pas = GetFloat();
                     printf("\n%.3f Pascals is %.3f psi.\n\n", pas, pas_to_psi(pas)); break;
                     
-            // Pascals -> H2O        
-            case 5: printf("\nPlease enter the pressure in pascals:\n\n");
+            // Pascals -> in H2O        
+            case 7: printf("\nPlease enter the pressure in pascals:\n\n");
                     pas = GetFloat();
                     printf("\n%.3f Pascals is %.3f inches of water.\n\n", pas, psi_to_h2o(pas_to_psi(pas))); break;
                     
-            // Pascals -> Hg
-            case 6: printf("\nPlease enter the pressure in pascals:\n\n");
+            // Pascals -> in Hg
+            case 8: printf("\nPlease enter the pressure in pascals:\n\n");
                     pas = GetFloat();
                     printf("\n%.3f Pascals is %.3f inches of Hg.\n\n", pas, h2o_to_hg(psi_to_h2o(pas_to_psi(pas)))); break;          
+            
+            // Pascals -> mm H2O
+            case 9: printf("\nPlease enter the pressure in pascals:\n\n");
+                    pas = GetFloat();
+                    printf("\n%.3f Pascals is %.3f millimeters of water.\n\n", pas, mmhg_to_mmh2o(hg_to_mmhg(h2o_to_hg(psi_to_h2o((pas_to_psi(pas))))))); break;
+          
+            // Pascals -> mm Hg
+            case 10: printf("\nPlease enter the pressure in pascals:\n\n");
+                     pas = GetFloat();
+                     printf("\n%.3f Pascals is %.3f millimeters of Hg.\n\n", pas, hg_to_mmhg(h2o_to_hg(psi_to_h2o(pas_to_psi(pas))))); break;
                     
-            // H2O -> Hg
-            case 7: printf("\nPlease enter the pressure in inches of water:\n\n");
-                    h2o = GetFloat();
-                    printf("\n%.3f inches of water is %.3f inches of Hg.\n\n", h2o, h2o_to_hg(h2o)); break;
-            // H2O -> PSI
-            case 8: printf("\nPlease enter the pressure in inches of water:\n\n");
-                    h2o = GetFloat();
-                    printf("\n%.3f inches of water is %.3f psi.\n\n", h2o, h2o_to_psi(h2o)); break;
+            // in H2O -> in Hg
+            case 11: printf("\nPlease enter the pressure in inches of water:\n\n");
+                     h2o = GetFloat();
+                     printf("\n%.3f inches of water is %.3f inches of Hg.\n\n", h2o, h2o_to_hg(h2o)); break;
+                     
+            // in H2O -> PSI
+            case 12: printf("\nPlease enter the pressure in inches of water:\n\n");
+                     h2o = GetFloat();
+                     printf("\n%.3f inches of water is %.3f psi.\n\n", h2o, h2o_to_psi(h2o)); break;
                     
-            // H2O -> Pascals
-            case 9: printf("\nPlease enter the pressure in inches of water:\n\n");
-                    h2o = GetFloat();
-                    printf("\n%.3f inches of water is %.3f Pascals.\n\n", h2o, psi_to_pas(h2o_to_psi(h2o))); break;           
-                            
-            // Hg -> H2O        
-            case 10: printf("\nPlease enter the pressure in inches of Hg:\n\n");
+            // in H2O -> Pascals
+            case 13: printf("\nPlease enter the pressure in inches of water:\n\n");
+                     h2o = GetFloat();
+                     printf("\n%.3f inches of water is %.3f Pascals.\n\n", h2o, psi_to_pas(h2o_to_psi(h2o))); break;           
+            
+            // in H2O -> mm H2O
+            case 14: printf("\nPlease enter the pressure in inches of water:\n\n");
+                     h2o = GetFloat();
+                     printf("\n%.3f inches of water is %.3f millimeters of water.\n\n", h2o, mmhg_to_mmh2o(hg_to_mmhg(h2o_to_hg(h2o)))); break;
+            
+            // in H2O -> mm Hg
+            case 15: printf("\nPlease enter the pressure in inches of water:\n\n");
+                     h2o = GetFloat();
+                     printf("\n%.3f inches of water is %.3f millimeters of Hg.\n\n", h2o, hg_to_mmhg(h2o_to_hg(h2o))); break;  
+                          
+            // in Hg -> in H2O        
+            case 16: printf("\nPlease enter the pressure in inches of Hg:\n\n");
                      hg = GetFloat();
                      printf("\n%.3f inches of Hg is %.3f inches of water.\n\n", hg, hg_to_h2o(hg)); break;
-            // Hg -> PSI        
-            case 11: printf("\nPlease enter the pressure in inches of Hg:\n\n");
+                     
+            // in Hg -> PSI        
+            case 17: printf("\nPlease enter the pressure in inches of Hg:\n\n");
                      hg = GetFloat();
                      printf("\n%.3f inches of Hg is %.3f psi.\n\n", hg, h2o_to_psi(hg_to_h2o(hg))); break;
-            // Hg -> Pascals         
-            case 12: printf("\nPlease enter the pressure in inches of Hg:\n\n");
+                     
+            // in Hg -> Pascals         
+            case 18: printf("\nPlease enter the pressure in inches of Hg:\n\n");
                      hg = GetFloat();
                      printf("\n%.3f inches of Hg is %.3f Pascals.\n\n", hg, psi_to_pas(h2o_to_psi(hg_to_h2o(hg)))); break;
-                    
+            
+            // in Hg -> mm H2O
+            case 19: printf("\nPlease enter the pressure in inches of Hg:\n\n");
+                     hg = GetFloat();
+                     printf("\n%.3f inches of Hg is %.3f millimeters of water.\n\n", hg, mmhg_to_mmh2o(hg_to_mmhg(hg))); break;
+            
+            // in Hg -> mm Hg
+            case 20: printf("\nPlease enter the pressure in inches of Hg:\n\n");
+                     hg = GetFloat();
+                     printf("\n%.3f inches of Hg is %.3f millimeters of Hg.\n\n", hg, hg_to_mmhg(hg)); break;
+            
+            // mm H2O -> mm Hg
+            case 21: printf("\nPlease enter the pressure in millimeters of water:\n\n");
+                     mmh2o = GetFloat();
+                     printf("\n%.3f millimeters of water is %.3f millimeters of Hg.\n\n", mmh2o, mmh2o_to_mmhg(mmh2o)); break;
+            
+            // mm H2O -> in H2O
+            case 22: printf("\nPlease enter the pressure in millimeters of water:\n\n");
+                     mmh2o = GetFloat();
+                     printf("\n%.3f millimeters of water is %.3f inches of water.\n\n", mmh2o, hg_to_h2o(mmhg_to_hg(mmh2o_to_mmhg(mmh2o)))); break;
+            
+            // mm H2O -> in Hg
+            case 23: printf("\nPlease enter the pressure in millimeters of water:\n\n");
+                     mmh2o = GetFloat();
+                     printf("\n%.3f millimeters of water is %.3f inches of Hg.\n\n", mmh2o, mmhg_to_hg(mmh2o_to_mmhg(mmh2o))); break;
+            
+            // mm H2O -> PSI
+            case 24: printf("\nPlease enter the pressure in millimeters of water:\n\n");
+                     mmh2o = GetFloat();
+                     printf("\n%.3f millimeters of water is %.3f psi.\n\n", mmh2o, h2o_to_psi(hg_to_h2o(mmhg_to_hg(mmh2o_to_mmhg(mmh2o))))); break;
+            
+            // mm H2O -> Pascals
+            case 25: printf("\nPlease enter the pressure in millimeters of water:\n\n");
+                     mmh2o = GetFloat();
+                     printf("\n%.3f millimeters of water is %.3f Pascals.\n\n", mmh2o, psi_to_pas(h2o_to_psi(hg_to_h2o(mmhg_to_hg(mmh2o_to_mmhg(mmh2o)))))); break;
+            
+            // mm Hg -> mm H2O
+            case 26: printf("\nPlease enter the pressure in millimeters of Hg:\n\n");
+                     mmhg = GetFloat();
+                     printf("\n%.3f millimeters of Hg is %.3f millimeters of water.\n\n", mmhg, mmhg_to_mmh2o(mmhg)); break;
+            
+            // mm Hg -> in Hg
+            case 27: printf("\nPlease enter the pressure in millimeters of Hg:\n\n");
+                     mmhg = GetFloat();
+                     printf("\n%.3f millimeters of Hg is %.3f inches of Hg.\n\n", mmhg, mmhg_to_hg(mmhg)); break;
+            
+            // mm Hg -> in H2O
+            case 28: printf("\nPlease enter the pressure in millimeters of Hg:\n\n");
+                     mmhg = GetFloat();
+                     printf("\n%.3f millimeters of Hg is %.3f inches of water.\n\n", mmhg, hg_to_h2o(mmhg_to_hg(mmhg))); break;
+            
+            // mm Hg -> PSI
+            case 29: printf("\nPlease enter the pressure in millimeters of Hg:\n\n");
+                     mmhg = GetFloat();
+                     printf("\n%.3f millimeters of Hg is %.3f psi.\n\n", mmhg, h2o_to_psi(hg_to_h2o(mmhg_to_hg(mmhg)))); break;
+            
+            // mm Hg -> Pascals
+            case 30: printf("\nPlease enter the pressure in millimeters of Hg:\n\n");
+                     mmhg = GetFloat();
+                     printf("\n%.3f millimeters of Hg is %.3f Pascals.\n\n", mmhg, psi_to_pas(h2o_to_psi(hg_to_h2o(mmhg_to_hg(mmhg))))); break;
+            
             default: printf("\nNot a valid option.\n\n"); break;
         }
     }
@@ -356,6 +474,7 @@ int distance (void)
         switch (dist)
         {
             case 0: return false;
+            
             // ft -> m
             case 1: printf("\nPlease enter the length in feet:\n\n");
                     ft = GetFloat();
@@ -405,6 +524,7 @@ int area (void)
         switch (area)
         {
             case 0: return false;
+            
             // sqft -> sqm
             case 1: printf("\nPlease enter the area in square feet:\n\n");
                     sqft = GetFloat();
@@ -440,6 +560,7 @@ int volume (void)
         switch (vol)
         {
             case 0: return false;
+            
             // ft^3 -> m^3
             case 1: printf("\nPlease enter the volume in cubic feet:\n\n");
                     cubft = GetFloat();
@@ -479,6 +600,7 @@ int velocity (void)
         switch (vel)
         {
             case 0: return false;
+            
             // ft/s -> m/s
             case 1: printf("\nPlease enter the velocity in feet per second:\n\n");
                     fts = GetFloat();
@@ -542,6 +664,7 @@ int acceleration (void)
         switch (accel)
         {
             case 0: return false;
+            
             // ft/sec^2 -> m/s^2
             case 1: printf("\nPlease enter the acceleration in feet per second squared:\n\n");
                     fts2 = GetFloat();
